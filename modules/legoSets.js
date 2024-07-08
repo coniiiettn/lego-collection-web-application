@@ -195,31 +195,3 @@ function deleteSet(set_num){
 }
 
 module.exports = { initialize, getAllSets, getSetByNum, getSetsByTheme, getAllThemes, addSet, editSet, deleteSet };
-
-// NOTE: If you receive the error:
-
-      // insert or update on table "Sets" violates foreign key constraint "Sets_theme_id_fkey"
-
-      // it is because you have a "set" in your collection that has a "theme_id" that does not exist in the "themeData".
-
-      // To fix this, use PgAdmin to delete the newly created "Themes" and "Sets" tables, fix the error in your .json files and re-run this code
-// sequelize
-//   .sync()
-//   .then( async () => {
-//     try{
-//       await Theme.bulkCreate(themeData);
-//       await Set.bulkCreate(setData); 
-//       console.log("-----");
-//       console.log("data inserted successfully");
-//     }catch(err){
-//       console.log("-----");
-//       console.log(err.message);
-// 
-//       
-//     }
-// 
-//     process.exit();
-//   })
-//   .catch((err) => {
-//     console.log('Unable to connect to the database:', err);
-//   });
