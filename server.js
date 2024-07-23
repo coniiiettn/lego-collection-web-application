@@ -5,7 +5,9 @@ const app = express();
 const HTTP_PORT = process.env.PORT || 8080;
 
 app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
+// Middleware to allow accessing information coming from forms
+app.use(express.urlencoded({ extended: true })); 
+
 
 app.set('view engine', 'ejs');
 
